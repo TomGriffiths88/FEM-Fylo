@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="container">
+      <main class="app">
+        <header class="header">
+          <img src="/images/logo.svg" alt="logo" class="header__logo" />
+          <ul class="header__controls">
+            <li class="header__item">
+              <img
+                src="/images/icon-document.svg"
+                alt=" new document"
+                class="header__icon"
+              />
+            </li>
+            <li class="header__item">
+              <img
+                src="/images/icon-folder.svg"
+                alt="new folder"
+                class="header__icon"
+              />
+            </li>
+            <li class="header__item">
+              <img
+                src="/images/icon-upload.svg"
+                alt="upload"
+                class="header__icon"
+              />
+            </li>
+          </ul>
+        </header>
+        <section class="status">
+          <div class="status__space">
+            <span>185</span>
+            <p>gb left</p>
+          </div>
+          <p class="status__desc">You’ve used <b>815 GB</b> of your storage</p>
+          <div class="status__level">
+            <div class="status__bar"><span class="status__ball"></span></div>
+          </div>
+          <div class="status__metrics">
+            <p class="status__metric">0 GB</p>
+            <p class="status__metric">1000 GB</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://tompatrick.dev" target="_BLANK">Tom Patrick</a>.
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>

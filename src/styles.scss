@@ -1,0 +1,282 @@
+//**************************************************************************
+// -  COLORS
+//**************************************************************************
+$color-pale-blue: hsl(243, 100%, 93%);
+$color-gray-blue: hsl(229, 7%, 55%);
+$color-dark-blue: hsl(228, 56%, 26%);
+$color-v-dark-blue: hsl(229, 57%, 11%);
+
+//**************************************************************************
+// -  GRADIENTS
+//**************************************************************************
+$gradient-primary: linear-gradient(
+  to right,
+  hsl(6, 100%, 80%),
+  hsl(335, 100%, 65%)
+);
+
+//**************************************************************************
+// -  RESET
+//**************************************************************************
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//**************************************************************************
+// -  TYPOGRAPHY
+//**************************************************************************
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: $color-pale-blue;
+  background: rgba(#0f1b3d, $alpha: 01);
+  background: rgba($color-v-dark-blue, $alpha: 01);
+}
+
+//**************************************************************************
+// -  BACKGROUND
+//**************************************************************************
+.background {
+  height: 100%;
+  width: 100%;
+  background: url('/images/bg-mobile.svg');
+  background-size: cover;
+  position: fixed;
+
+  @media (min-width: 62.5em) {
+    bottom: 0;
+    left: 0;
+    top: 50%;
+    height: 50%;
+    background: url('/images/bg-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 28rem 0 0 0;
+  }
+}
+
+//**************************************************************************
+// -  CONTAINER
+//**************************************************************************
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//**************************************************************************
+// -  APP
+//**************************************************************************
+.app {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  @media (min-width: 62.5em) {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100rem;
+  }
+}
+
+//**************************************************************************
+// -  HEADER
+//**************************************************************************
+.header {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 1rem;
+  background: $color-dark-blue;
+  border-radius: 1.5rem 10rem 1.5rem 1.5rem;
+  box-shadow: 0 2rem 2rem rgba($color-v-dark-blue, 0.3);
+  flex-basis: 45%;
+
+  &__logo {
+    height: 4.5rem;
+    width: auto;
+    align-self: flex-start;
+    margin-bottom: 3rem;
+
+    @media (min-width: 62.5em) {
+      height: 4.3rem;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  &__item {
+    height: 5rem;
+    width: 5rem;
+    background: $color-v-dark-blue;
+    border-radius: 1rem;
+    position: relative;
+    margin-right: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//**************************************************************************
+// -  STATUS
+//**************************************************************************
+
+.status {
+  background-color: $color-dark-blue;
+  max-width: 60rem;
+  flex-basis: 65%;
+  border-radius: 1.5rem;
+  padding: 4rem;
+  padding-bottom: 6rem;
+  margin: 1rem;
+  position: relative;
+  color: white;
+  box-shadow: 0 2rem 2rem rgba($color-v-dark-blue, 0.3);
+
+  @media (min-width: 62.5em) {
+    align-self: flex-end;
+    padding: 4rem;
+  }
+
+  &__space {
+    position: absolute;
+    bottom: -4rem;
+    left: 50%;
+    width: 65%;
+    background: white;
+    padding: 1.5rem 3rem;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+    text-transform: uppercase;
+    color: $color-gray-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      height: 3.5rem;
+      background: white;
+      width: 3.5rem;
+      position: absolute;
+      right: 0;
+      bottom: -2.3rem;
+      border-radius: 0.3rem;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+
+      @media (max-width: 62.5em) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 62.5em) {
+      top: -5rem;
+      bottom: unset;
+      width: auto;
+      right: 4rem;
+      transform: translateX(0);
+    }
+
+    span {
+      font-size: 4rem;
+      font-weight: 700;
+      color: $color-v-dark-blue;
+    }
+
+    p {
+      margin-left: 1rem;
+      font-weight: 700;
+      line-height: 1;
+      opacity: 0.8;
+    }
+  }
+
+  &__level {
+    height: 2rem;
+    background: rgba($color-v-dark-blue, 0.4);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__bar {
+    width: 75%;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    background: $gradient-primary;
+    position: relative;
+  }
+
+  &__ball {
+    background: white;
+    position: absolute;
+    right: 0.1rem;
+    top: 0.1rem;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 50%;
+  }
+
+  &__desc {
+    margin-bottom: 2rem;
+    @media (min-width: 62.5em) {
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  &__metrics {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    @media (min-width: 62.5em) {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+//**************************************************************************
+// -  ATTRIBUTION
+//**************************************************************************
+
+.attribution {
+  display: none;
+  @media (min-width: 62.5em) {
+    display: unset;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+  }
+
+  a {
+    color: rgba($color-pale-blue, 0.3);
+  }
+}
